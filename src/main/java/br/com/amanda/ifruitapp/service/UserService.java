@@ -19,6 +19,7 @@ public class UserService {
 
     public User buscarPorId(int id){
         for (int i = 0; i <= lista.size(); i++){
+            System.out.println(this.lista.get(i));
             if (this.lista.get(i).getId() == id){
                 return this.lista.get(i);
             }
