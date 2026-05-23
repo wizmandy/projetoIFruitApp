@@ -14,6 +14,8 @@ public class User {
     private String email;
     private String cpf;
 
+    public User(){}
+
     public User(Integer id, String name, String email, String cpf) {
         this.id = id;
         this.name = name;

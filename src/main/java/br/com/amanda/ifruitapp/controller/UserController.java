@@ -20,8 +20,13 @@ public class UserController {
         return userService.buscarPorId(id);
     }
 
+    @GetMapping("/user/listartodos")
+    public Iterable<User> retornaTodosUsers(){
+        return userService.retornaTodosUsers();
+    }
+
     @PostMapping("/adduser")
     public User adicionaUsuario(@RequestBody User userTarget) {
-        return userRepository.save(userTarget);
+        return userService.adicionaUsuario(userTarget);
     }
 }
