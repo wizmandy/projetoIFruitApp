@@ -2,6 +2,9 @@ package br.com.amanda.ifruitapp.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "tbl_user")
 public class User {
@@ -13,6 +16,8 @@ public class User {
     private String name;
     private String email;
     private String cpf;
+    @OneToMany
+    private List<Order> pedidos = new ArrayList<>();
 
     public User(){}
 
@@ -55,6 +60,14 @@ public class User {
         this.cpf = cpf;
     }
 
+    public List<Order> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Order> pedidos) {
+        this.pedidos = pedidos;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -62,6 +75,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", cpf='" + cpf + '\'' +
+                ", pedidos=" + pedidos +
                 '}';
     }
 }
